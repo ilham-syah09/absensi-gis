@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 10, 2023 at 04:05 AM
+-- Generation Time: Feb 19, 2023 at 04:39 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.1
 
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `db_prakerin`
+-- Database: `absensi_gis`
 --
 
 -- --------------------------------------------------------
@@ -46,24 +46,6 @@ INSERT INTO `tb_admin` (`id`, `name`, `username`, `image`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tb_berkas`
---
-
-CREATE TABLE `tb_berkas` (
-  `berkas_id` int(11) NOT NULL,
-  `laporan` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `tb_berkas`
---
-
-INSERT INTO `tb_berkas` (`berkas_id`, `laporan`) VALUES
-(1, 'c0000cb0692184a034114e95d91e2b67.pdf');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tb_user`
 --
 
@@ -80,7 +62,8 @@ CREATE TABLE `tb_user` (
 --
 
 INSERT INTO `tb_user` (`id`, `name`, `username`, `image`, `password`) VALUES
-(1, 'user', 'user123', '94a9588862e5e5926c420fe2c474c2da.png', '$2y$10$Xbcx2hOxG.6Ml8xkYQ.Z4uuwfLc8pg4wf96se0x3DxDbLCXWmz58.');
+(1, 'user', 'user123', '94a9588862e5e5926c420fe2c474c2da.png', '$2y$10$MV2OBaQw4pwBCea.j/mhLuUwEEZH64YKcfxM0ijdTufh/C2qy66fO'),
+(4, 'aksdka', 'dksand', 'default.png', '$2y$10$heJ70cg6UsaWxKXEjuDLfONW9JuzRtf8PLMmO9ntSKacgSub/90M6');
 
 --
 -- Indexes for dumped tables
@@ -91,12 +74,6 @@ INSERT INTO `tb_user` (`id`, `name`, `username`, `image`, `password`) VALUES
 --
 ALTER TABLE `tb_admin`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `tb_berkas`
---
-ALTER TABLE `tb_berkas`
-  ADD PRIMARY KEY (`berkas_id`);
 
 --
 -- Indexes for table `tb_user`
@@ -118,7 +95,7 @@ ALTER TABLE `tb_admin`
 -- AUTO_INCREMENT for table `tb_user`
 --
 ALTER TABLE `tb_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
