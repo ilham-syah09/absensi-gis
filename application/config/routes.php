@@ -53,6 +53,8 @@ $route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['admin'] = 'admin/home';
+
 $route['berkas'] = 'user/berkas';
 $route['profile'] = 'user/userProfile';
 

@@ -12,7 +12,7 @@ class Auth extends CI_Controller
                 $this->session->set_flashdata('notif-error', 'Anda sudah login !');
                 redirect('admin');
             }
-        } else if (!empty($this->session->userdata('log_user'))) {
+        } else if (!empty($this->session->userdata('log_pegawai'))) {
             if ($this->uri->segment(2) != 'logout') {
                 $this->session->set_flashdata('notif-error', 'Anda sudah login !');
                 redirect('user');
@@ -51,9 +51,9 @@ class Auth extends CI_Controller
             if ($user == 'admin') {
                 $this->session->set_flashdata('toastr-sukses', 'Login berhasil');
                 redirect('admin');
-            } else if ($user == 'user') {
+            } else if ($user == 'pegawai') {
                 $this->session->set_flashdata('toastr-sukses', 'Login berhasil');
-                redirect('user');
+                redirect('pegawai');
             } else {
                 $this->session->set_flashdata('toastr-eror', $user);
                 redirect('auth');

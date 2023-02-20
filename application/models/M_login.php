@@ -4,7 +4,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class M_login extends CI_Model
 {
-
     function cek($username, $password)
     {
         $this->db->where('username', $username);
@@ -29,7 +28,7 @@ class M_login extends CI_Model
             }
         } else {
             $this->db->where('username', $username);
-            $query = $this->db->get('tb_user');
+            $query = $this->db->get('pegawai');
             $data = $query->row();
 
             if ($data) {
@@ -38,12 +37,12 @@ class M_login extends CI_Model
                         'is_logged_in'    => true,
                         'username'        => $username,
                         'id'              => $data->id,
-                        'role'            => 'user'
+                        'role'            => 'pegawai'
                     );
                     if ($login) {
-                        $this->session->set_userdata('log_user', $login);
+                        $this->session->set_userdata('log_pegawai', $login);
                         $this->session->set_userdata($login);
-                        return 'user';
+                        return 'pegawai';
                     }
                 } else {
                     return 'Username atau Password Salah!!';
