@@ -34,7 +34,7 @@ class Setting extends CI_Controller
 	{
 		$data = [
 			'jamMasuk'     => $this->input->post('jamMasuk'),
-			'jamKeluar'    => $this->input->post('jamKeluar'),
+			'jamPulang'    => $this->input->post('jamPulang'),
 			'lintangBujur' => $this->input->post('lintangBujur'),
 			'jarak'        => $this->input->post('jarak')
 		];

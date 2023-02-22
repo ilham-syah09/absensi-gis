@@ -27,8 +27,8 @@
 								</div>
 								<div class="col-lg-6">
 									<div class="form-group">
-										<label>Jam Keluar</label>
-										<input type="text" class="form-control js-masked-time" name="jamKeluar" value="<?= date('H:i', strtotime($setting->jamKeluar)); ?>">
+										<label>Jam Pulang</label>
+										<input type="text" class="form-control js-masked-time" name="jamPulang" value="<?= date('H:i', strtotime($setting->jamPulang)); ?>">
 									</div>
 								</div>
 								<div class="col-lg-6">
@@ -66,7 +66,7 @@
 							<span>Jam Masuk <?= $setting->jamMasuk; ?></span>
 						</div>
 						<div class="bg-primary p-3 text-white text-center">
-							<span>Jam Keluar <?= $setting->jamKeluar; ?></span>
+							<span>Jam Keluar <?= $setting->jamPulang; ?></span>
 						</div>
 					</div>
 				</div>
