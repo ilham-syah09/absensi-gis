@@ -45,17 +45,8 @@
                         <?= $this->session->flashdata('message'); ?>
                         <div class="toastr-sukses" data-flashdata="<?= $this->session->flashdata('toastr-sukses'); ?>"></div>
                         <div class="toastr-eror" data-flashdata="<?= $this->session->flashdata('toastr-eror'); ?>"></div>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item"><a href="<?= base_url('frontend'); ?>"><i class="fas fa-tachometer-alt"></i> Beranda</a></li>
-                                <li class="breadcrumb-item active" aria-current="page"><i class="far fa-file"></i> <?= $title; ?></li>
-                            </ol>
-                        </nav>
 
                         <?php $this->load->view($page); ?>
-                        <div class="simple-footer">
-                            Copyright &copy; Ilham Syah 2022
-                        </div>
                     </div>
                 </div>
             </div>

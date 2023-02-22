@@ -15,7 +15,7 @@ class Auth extends CI_Controller
         } else if (!empty($this->session->userdata('log_pegawai'))) {
             if ($this->uri->segment(2) != 'logout') {
                 $this->session->set_flashdata('notif-error', 'Anda sudah login !');
-                redirect('user');
+                redirect('pegawai');
             }
         }
         $this->load->model('M_login', 'login');
@@ -65,12 +65,6 @@ class Auth extends CI_Controller
     {
         $this->session->sess_destroy($this->session->userdata('log_admin'));
         redirect('auth', 'refresh');
-    }
-
-    public function user()
-    {
-        $data = password_hash('user123', PASSWORD_BCRYPT);
-        echo $data;
     }
 }
 

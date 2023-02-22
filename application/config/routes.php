@@ -60,3 +60,6 @@ $route['admin/presensi/list/(:any)']   = 'admin/presensi/list/$1';
 $route['admin/presensi/detail/(:any)'] = 'admin/presensi/detail/$1';
 $route['admin/presensi/(:any)']        = 'admin/presensi/index';
 $route['admin/presensi/(:any)/(:any)'] = 'admin/presensi/index';
+
+// pegawai
+$route['pegawai'] = 'pegawai/home';

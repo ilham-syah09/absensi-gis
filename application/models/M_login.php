@@ -27,7 +27,7 @@ class M_login extends CI_Model
                 return 'Username atau Password Salah!!';
             }
         } else {
-            $this->db->where('username', $username);
+            $this->db->where('email', $username);
             $query = $this->db->get('pegawai');
             $data = $query->row();
 
