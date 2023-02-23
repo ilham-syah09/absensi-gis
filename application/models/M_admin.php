@@ -8,6 +8,17 @@ class M_admin extends CI_Model
         return $this->db->get('tb_user')->result();
     }
 
+    public function getCountJabatan()
+    {
+        return $this->db->get('jabatan')->num_rows();
+    }
+
+    public function getCountPegawai($status)
+    {
+        $this->db->where('status', $status);
+        return $this->db->get('pegawai')->num_rows();
+    }
+
     public function getJabatan()
     {
         $this->db->order_by('namaJabatan', 'asc');

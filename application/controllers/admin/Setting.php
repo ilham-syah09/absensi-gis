@@ -32,11 +32,18 @@ class Setting extends CI_Controller
 
 	public function edit()
 	{
+		if ($this->input->post('hariKerja')) {
+			$hariKerja = implode(',', $this->input->post('hariKerja'));
+		} else {
+			$hariKerja = null;
+		}
+
 		$data = [
 			'jamMasuk'     => $this->input->post('jamMasuk'),
 			'jamPulang'    => $this->input->post('jamPulang'),
 			'lintangBujur' => $this->input->post('lintangBujur'),
-			'jarak'        => $this->input->post('jarak')
+			'jarak'        => $this->input->post('jarak'),
+			'hariKerja'    => $hariKerja
 		];
 
 		$this->db->where('id', $this->input->post('id_setting'));

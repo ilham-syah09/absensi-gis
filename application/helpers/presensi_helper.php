@@ -2,6 +2,26 @@
 
 if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+function hari($hari)
+{
+	if ($hari == 1) {
+		$hari = "Senin";
+	} else if ($hari == 2) {
+		$hari = "Selasa";
+	} else if ($hari == 3) {
+		$hari = "Rabu";
+	} else if ($hari == 4) {
+		$hari = "Kamis";
+	} else if ($hari == 5) {
+		$hari = "Jum'at";
+	} else if ($hari == 6) {
+		$hari = "Sabtu";
+	} else if ($hari == 7) {
+		$hari = "Ahad";
+	}
+	return $hari;
+}
+
 function bulan($bulan)
 {
 	switch ($bulan) {

@@ -43,6 +43,19 @@
 										<input type="number" class="form-control" name="jarak" value="<?= $setting->jarak; ?>">
 									</div>
 								</div>
+								<div class="col-lg-6">
+									<div class="form-group">
+										<label class="d-block">Hari Kerja</label>
+										<?php foreach (range(1, 7) as $n) : ?>
+											<div class="form-check">
+												<input class="form-check-input" type="checkbox" id="<?= $n; ?>" value="<?= $n; ?>" name="hariKerja[]" <?= (in_array($n, explode(',', $setting->hariKerja))) ? 'checked' : ''; ?>>
+												<label class="form-check-label" for="<?= $n; ?>">
+													<?= hari($n); ?>
+												</label>
+											</div>
+										<?php endforeach; ?>
+									</div>
+								</div>
 							</div>
 							<button type="submit" class="btn btn-primary">Simpan</button>
 						</form>
@@ -53,6 +66,9 @@
 		<div class="row">
 			<div class="col-lg-8">
 				<div class="card">
+					<div class="card-header bg-secondary">
+						<h5>Lokasi Kantor</h5>
+					</div>
 					<div class="card-body">
 						<iframe width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="<?= "https://maps.google.com/maps?q=" . $setting->lintangBujur . "&amp;output=embed"; ?>">
 						</iframe>
