@@ -1,11 +1,11 @@
 <section class="section">
 	<div class="section-header">
-		<h1><?= $title . ' : ' . $presensi->nama; ?></h1>
+		<h1><?= $title; ?></h1>
 	</div>
 	<div class="section-body">
 		<div class="row mb-3 text-right">
 			<div class="col-xl-12">
-				<a href="<?= base_url('admin/presensi/list/') . $presensi->tanggal; ?>" class="btn btn-primary">Kembali</a>
+				<a href="<?= base_url('pegawai/presensi/') . date('Y', strtotime($presensi->tanggal)) . '/' . date('m', strtotime($presensi->tanggal)); ?>" class="btn btn-primary">Kembali</a>
 			</div>
 		</div>
 		<div class="row">

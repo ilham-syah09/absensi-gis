@@ -53,9 +53,9 @@
                             <?php if ($this->session->userdata('log_admin')) : ?>
                                 <img alt="image" src="<?= base_url('uploads/profiles/' . $this->dt_admin->image); ?>" class="rounded-circle mr-1">
                                 <div class="d-sm-none d-lg-inline-block"><?= $this->dt_admin->name; ?></div>
-                            <?php elseif ($this->session->userdata('log_user')) : ?>
-                                <img alt="image" src="<?= base_url('uploads/profiles/' . $this->dt_user->image); ?>" class="rounded-circle mr-1">
-                                <div class="d-sm-none d-lg-inline-block"><?= $this->dt_user->name; ?></div>
+                            <?php elseif ($this->session->userdata('log_pegawai')) : ?>
+                                <img alt="image" src="<?= base_url('uploads/profiles/' . $this->dt_pegawai->image); ?>" class="rounded-circle mr-1">
+                                <div class="d-sm-none d-lg-inline-block"><?= $this->dt_pegawai->nama; ?></div>
                             <?php endif; ?>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right">
@@ -82,7 +82,7 @@
 
             <footer class="main-footer">
                 <div class="footer-left">
-                    Copyright &copy; 2022 <div class="bullet"></div><a href="#">Absensi Karyawan</a>
+                    Copyright &copy; 2023 <div class="bullet"></div><a href="#">Presensi Karyawan</a>
                 </div>
                 <div class="footer-right">
 
@@ -141,7 +141,7 @@
 
             if (sukses) {
                 iziToast.success({
-                    title: 'Success',
+                    title: 'Sukses',
                     message: sukses,
                     position: 'topRight'
                 });
@@ -149,7 +149,7 @@
 
             if (eror) {
                 iziToast.error({
-                    title: 'Error',
+                    title: 'Gagal',
                     message: eror,
                     position: 'topRight'
                 });

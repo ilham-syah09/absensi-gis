@@ -63,3 +63,9 @@ $route['admin/presensi/(:any)/(:any)'] = 'admin/presensi/index';
 
 // pegawai
 $route['pegawai'] = 'pegawai/home';
+
+$route['pegawai/presensi/detail/(:any)'] = 'pegawai/presensi/detail/$1';
+$route['pegawai/presensi/masuk']         = 'pegawai/presensi/masuk';
+$route['pegawai/presensi/pulang']        = 'pegawai/presensi/pulang';
+$route['pegawai/presensi/(:any)']        = 'pegawai/presensi/index';
+$route['pegawai/presensi/(:any)/(:any)'] = 'pegawai/presensi/index';

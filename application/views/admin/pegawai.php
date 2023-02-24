@@ -52,7 +52,7 @@
 </section>
 
 <!-- modal add -->
-<div class="modal fade" id="addPegawai" tabindex="-1" role="dialog" aria-labelledby="addJabatanTitle" aria-hidden="true">
+<div class="modal fade" id="addPegawai" tabindex="-1" role="dialog" aria-labelledby="addPegawai" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">
@@ -115,7 +115,7 @@
 </div>
 
 <!-- modal edit -->
-<div class="modal fade" id="editPegawai" tabindex="-1" role="dialog" aria-labelledby="addJabatanTitle" aria-hidden="true">
+<div class="modal fade" id="editPegawai" tabindex="-1" role="dialog" aria-labelledby="editPegawai" aria-hidden="true">
 	<div class="modal-dialog" role="document">
 		<div class="modal-content">
 			<div class="modal-header">

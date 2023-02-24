@@ -1,9 +1,9 @@
 <aside id="sidebar-wrapper">
 	<div class="sidebar-brand">
-		<a href="index.html">PRESENSI KARYAWAN</a>
+		<a href="<?= base_url('admin'); ?>">PRESENSI KARYAWAN</a>
 	</div>
 	<div class="sidebar-brand sidebar-brand-sm">
-		<a href="index.html">PRS</a>
+		<a href="<?= base_url('admin'); ?>">PRS</a>
 	</div>
 	<ul class="sidebar-menu">
 		<li class="<?= ($this->uri->segment(2) === "home" || $this->uri->segment(2) == "") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('admin'); ?>"><i class="fas fa-code"></i> <span>Dashboard</span></a></li>

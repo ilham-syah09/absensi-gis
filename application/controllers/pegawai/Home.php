@@ -21,9 +21,10 @@ class Home extends CI_Controller
 	public function index()
 	{
 		$data = [
-			'title'  => 'Dashboard Pegawai',
-			'navbar' => 'pegawai/navbar',
-			'page'   => 'pegawai/dashboard',
+			'title'   => 'Dashboard Pegawai',
+			'navbar'  => 'pegawai/navbar',
+			'page'    => 'pegawai/dashboard',
+			'setting' => $this->pegawai->getSetting(),
 		];
 
 		$this->load->view('index', $data);
