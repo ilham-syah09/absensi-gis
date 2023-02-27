@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 22, 2023 at 03:25 AM
+-- Generation Time: Feb 27, 2023 at 03:30 AM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -67,8 +67,8 @@ CREATE TABLE `pegawai` (
 --
 
 INSERT INTO `pegawai` (`id`, `email`, `password`, `nama`, `nip`, `idJabatan`, `jk`, `status`, `image`, `createAt`, `updateAt`) VALUES
-(1, 'pegawai.1@gmail.com', '$2y$10$Eu/xosyX37.owhFV6h/ad.Eqxf0TmO6L/KqzT/aPz0MZ7LcnL2UVe', 'Pegawai 1', '199912030001', 3, 2, 1, '94a9588862e5e5926c420fe2c474c2da.png', '2023-02-20 02:17:29', '2023-02-21 04:17:19'),
-(5, 'ilham@gmail.com', '$2y$10$ClPbZ.S9Ij0vYDgEnc9KI.ErEFjycS5LK/AajTIs8Qycyh/Ti1FKa', 'Ilham', '129091209', 1, 1, 1, 'default.png', '2023-02-20 04:15:23', '2023-02-20 04:33:23');
+(1, 'pegawai.1@gmail.com', '$2y$10$RCnEISXcGP68RQIyYtcot.5itQA.MDUpFCRhZXBJUHAAYp.oiH3wi', 'Pegawai 1', '199912030001', 3, 2, 1, '94a9588862e5e5926c420fe2c474c2da.png', '2023-02-20 02:17:29', '2023-02-22 02:36:27'),
+(5, 'ilham@gmail.com', '$2y$10$RCnEISXcGP68RQIyYtcot.5itQA.MDUpFCRhZXBJUHAAYp.oiH3wi', 'Ilham', '129091209', 1, 1, 1, 'default.png', '2023-02-20 04:15:23', '2023-02-22 02:36:24');
 
 -- --------------------------------------------------------
 
@@ -101,8 +101,12 @@ INSERT INTO `presensi` (`id`, `idPegawai`, `tanggal`, `presensiMasuk`, `pictureM
 (2, 5, '2023-02-20', '07:59:52', 'sample-presensi.png', '17:13:52', 'sample-presensi.png', NULL, NULL, NULL, NULL, '2023-02-21 02:04:43', '2023-02-21 13:51:03'),
 (3, 1, '2023-02-21', '08:02:52', 'sample-presensi.png', '17:03:52', 'sample-presensi.png', NULL, NULL, NULL, NULL, '2023-02-21 02:04:43', '2023-02-21 13:51:04'),
 (4, 5, '2023-02-21', '07:56:52', 'sample-presensi.png', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-21 02:04:43', '2023-02-21 13:50:58'),
-(5, 1, '2023-02-19', NULL, NULL, NULL, NULL, '07:45:00', 'sakit', 'sample-izin.png', 'Menunggu', '2023-02-21 02:04:43', '2023-02-22 02:24:01'),
-(6, 5, '2023-02-19', '08:09:52', 'sample-presensi.png', '16:03:52', 'sample-presensi.png', NULL, NULL, NULL, NULL, '2023-02-21 02:04:43', '2023-02-21 13:51:03');
+(5, 5, '2023-02-19', NULL, NULL, NULL, NULL, '07:45:00', 'sakit', 'sample-izin.png', 'Disetujui', '2023-02-21 02:04:43', '2023-02-26 13:39:16'),
+(6, 1, '2023-02-19', '08:09:52', 'sample-presensi.png', '16:03:52', 'sample-presensi.png', NULL, NULL, NULL, NULL, '2023-02-21 02:04:43', '2023-02-24 14:38:59'),
+(9, 5, '2023-02-24', '21:58:39', '4916b998ec40dfc46dad1f617b494b50.jpg', '21:59:06', '30c8789c572852291c7d844529ac0a88.jpg', NULL, NULL, NULL, NULL, '2023-02-24 14:58:39', '2023-02-24 14:59:06'),
+(10, 5, '2023-02-25', '16:01:52', 'e392ff71a58e81567422e80ba7944387.jpg', '16:02:26', 'e3c888931a67f6193b61e4bedc5085b0.jpg', NULL, NULL, NULL, NULL, '2023-02-25 09:01:52', '2023-02-25 09:02:26'),
+(11, 5, '2023-02-18', NULL, NULL, NULL, NULL, '20:24:05', 'Sakit gaes', '468ce3cfe4c8f8716112c33cab3c209f.png', 'Disetujui', '2023-02-26 13:24:05', '2023-02-26 13:38:47'),
+(12, 5, '2023-02-27', '09:30:23', '60e0b67c6ce97c577980c1759cfebb22.jpg', NULL, NULL, NULL, NULL, NULL, NULL, '2023-02-27 02:30:23', NULL);
 
 -- --------------------------------------------------------
 
@@ -116,6 +120,7 @@ CREATE TABLE `setting` (
   `jamPulang` time NOT NULL,
   `lintangBujur` varchar(100) NOT NULL,
   `jarak` int(3) NOT NULL,
+  `hariKerja` varchar(20) NOT NULL,
   `createdAt` timestamp NOT NULL DEFAULT current_timestamp(),
   `updatedAt` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -124,8 +129,8 @@ CREATE TABLE `setting` (
 -- Dumping data for table `setting`
 --
 
-INSERT INTO `setting` (`id`, `jamMasuk`, `jamPulang`, `lintangBujur`, `jarak`, `createdAt`, `updatedAt`) VALUES
-(1, '08:00:00', '16:30:00', '-6.868502061993143, 109.10734557034732', 50, '2023-02-20 08:52:48', '2023-02-21 01:17:31');
+INSERT INTO `setting` (`id`, `jamMasuk`, `jamPulang`, `lintangBujur`, `jarak`, `hariKerja`, `createdAt`, `updatedAt`) VALUES
+(1, '08:00:00', '16:30:00', '-6.868544669341357, 109.10728119733434', 50, '1,2,3,4,5', '2023-02-20 08:52:48', '2023-02-27 02:29:42');
 
 -- --------------------------------------------------------
 
@@ -146,7 +151,7 @@ CREATE TABLE `tb_admin` (
 --
 
 INSERT INTO `tb_admin` (`id`, `name`, `username`, `image`, `password`) VALUES
-(1, 'superadmin', 'superadmin', 'default.png', '$2y$10$aX3KtHwTSYkN0AZ0fn7LcO727KuqwFEu91mL4kEKw7fYsOou1exSu');
+(1, 'Admin Kepegawaian', 'superadmin', 'default.png', '$2y$10$aX3KtHwTSYkN0AZ0fn7LcO727KuqwFEu91mL4kEKw7fYsOou1exSu');
 
 --
 -- Indexes for dumped tables
@@ -202,7 +207,7 @@ ALTER TABLE `pegawai`
 -- AUTO_INCREMENT for table `presensi`
 --
 ALTER TABLE `presensi`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `setting`

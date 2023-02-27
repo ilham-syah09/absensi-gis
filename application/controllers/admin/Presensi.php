@@ -70,6 +70,24 @@ class Presensi extends CI_Controller
 
 		$this->load->view('index', $data);
 	}
+
+	public function izin($status, $id)
+	{
+		$data = [
+			'statusIzin' => $status
+		];
+
+		$this->db->where('id', $id);
+		$update = $this->db->update('presensi', $data);
+
+		if ($update) {
+			$this->session->set_flashdata('toastr-sukses', 'Izin berhasil ' . $status);
+		} else {
+			$this->session->set_flashdata('toastr-eror', 'Izin berhasil ' . $status);
+		}
+
+		redirect($_SERVER['HTTP_REFERER'], 'refresh');
+	}
 }
 
 /* End of file Presensi.php */

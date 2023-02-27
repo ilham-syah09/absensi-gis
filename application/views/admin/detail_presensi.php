@@ -146,6 +146,10 @@
 												</tr>
 											</thead>
 										</table>
+										<?php if ($presensi->statusIzin == 'Menunggu') : ?>
+											<a href="<?= base_url('admin/presensi/izin/Ditolak/') . $presensi->id; ?>" class="btn btn-danger text-dark">Tolak</a>
+											<a href="<?= base_url('admin/presensi/izin/Disetujui/') . $presensi->id; ?>" class="btn btn-success text-dark">Setujui</a>
+										<?php endif; ?>
 									</div>
 								</div>
 							</div>

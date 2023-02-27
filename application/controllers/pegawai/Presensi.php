@@ -180,6 +180,65 @@ class Presensi extends CI_Controller
 
 		echo json_encode($res);
 	}
+
+	public function izin()
+	{
+		$document = $_FILES['document']['name'];
+
+		if ($document) {
+			$this->load->library('upload');
+			$config['upload_path']   = './uploads/izin';
+			$config['allowed_types'] = 'jpg|jpeg|png|pdf';
+			// $config['max_size']             = 3072; // 3 mb
+			$config['remove_spaces'] = TRUE;
+			$config['detect_mime']   = TRUE;
+			$config['encrypt_name']  = TRUE;
+
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+
+			if (!$this->upload->do_upload('document')) {
+				$this->session->set_flashdata('toastr-eror', $this->upload->display_errors());
+				redirect('pegawai/presensi', 'refresh');
+			} else {
+				$upload_data = $this->upload->data();
+
+				$data = [
+					'idPegawai'  => $this->dt_pegawai->id,
+					'tanggal'    => date('Y-m-d'),
+					'izin'       => date('H:i:s'),
+					'alasanIzin' => $this->input->post('alasan'),
+					'document'   => $upload_data['file_name'],
+					'statusIzin' => 'Menunggu'
+				];
+
+				$insert = $this->db->insert('presensi', $data);
+
+				if ($insert) {
+					$this->session->set_flashdata('toastr-sukses', 'Permohonan izin berhasil');
+				} else {
+					$this->session->set_flashdata('toastr-eror', 'Serve error!');
+				}
+			}
+		} else {
+			$this->session->set_flashdata('toastr-eror', 'Document tidak oleh kosong!');
+		}
+
+		redirect('pegawai/presensi', 'refresh');
+	}
+
+	public function realTime()
+	{
+		$setting = $this->pegawai->getSetting();
+		$lintangBujur = explode(', ', $setting->lintangBujur);
+
+		$respon = [
+			'lat1' => $lintangBujur[0],
+			'long1' => $lintangBujur[1]
+		];
+
+		echo json_encode($respon);
+	}
 }
 
 /* End of file Presensi.php */

@@ -56,10 +56,11 @@ $route['translate_uri_dashes'] = FALSE;
 // admin
 $route['admin'] = 'admin/home';
 
-$route['admin/presensi/list/(:any)']   = 'admin/presensi/list/$1';
-$route['admin/presensi/detail/(:any)'] = 'admin/presensi/detail/$1';
-$route['admin/presensi/(:any)']        = 'admin/presensi/index';
-$route['admin/presensi/(:any)/(:any)'] = 'admin/presensi/index';
+$route['admin/presensi/list/(:any)']        = 'admin/presensi/list/$1';
+$route['admin/presensi/detail/(:any)']      = 'admin/presensi/detail/$1';
+$route['admin/presensi/izin/(:any)/(:any)'] = 'admin/presensi/izin/$1/$2';
+$route['admin/presensi/(:any)']             = 'admin/presensi/index';
+$route['admin/presensi/(:any)/(:any)']      = 'admin/presensi/index';
 
 // pegawai
 $route['pegawai'] = 'pegawai/home';
@@ -67,5 +68,7 @@ $route['pegawai'] = 'pegawai/home';
 $route['pegawai/presensi/detail/(:any)'] = 'pegawai/presensi/detail/$1';
 $route['pegawai/presensi/masuk']         = 'pegawai/presensi/masuk';
 $route['pegawai/presensi/pulang']        = 'pegawai/presensi/pulang';
+$route['pegawai/presensi/izin']          = 'pegawai/presensi/izin';
+$route['pegawai/presensi/realTime']      = 'pegawai/presensi/realTime';
 $route['pegawai/presensi/(:any)']        = 'pegawai/presensi/index';
 $route['pegawai/presensi/(:any)/(:any)'] = 'pegawai/presensi/index';

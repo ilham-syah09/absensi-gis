@@ -6,7 +6,7 @@
 	</div>
 	<div class="section-body">
 		<div class="row">
-			<div class="col-sm-3">
+			<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
 				<div class="card">
 					<div class="card-header justify-content-center bg-secondary">
 						<h5>Biodata</h5>
@@ -35,7 +35,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-3">
+			<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
 				<div class="card">
 					<div class="card-header justify-content-center bg-secondary">
 						<h5>Presensi hari ini</h5>
@@ -73,7 +73,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-6">
+			<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
 				<div class="card">
 					<div class="card-header justify-content-center bg-secondary">
 						<h5>Lokasi Kantor</h5>
