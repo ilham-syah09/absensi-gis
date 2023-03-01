@@ -50,17 +50,53 @@
 									<div class="bg-primary p-2 text-white mb-2 float-left">
 										<span>Jam Masuk <?= $setting->jamMasuk; ?></span>
 									</div>
-									<div class="bg-success p-2 text-white mb-2 float-right">
-										<span><i class="fas fa-hand-paper"></i></span>
-									</div>
+									<?php if ($presensiHariIni) : ?>
+										<?php if ($presensiHariIni[0]->izin == null) : ?>
+											<?php if ($presensiHariIni[0]->presensiMasuk != null) : ?>
+												<div class="bg-success p-2 text-white mb-2 float-right">
+													<span><i class="fas fa-hand-paper"></i></span>
+												</div>
+											<?php else : ?>
+												<div class="bg-danger p-2 text-white mb-2 float-right">
+													<span><i class="fas fa-hand-paper"></i></span>
+												</div>
+											<?php endif; ?>
+										<?php else : ?>
+											<div class="bg-info p-2 text-white mb-2 float-right">
+												<span><i class="fas fa-info"></i></span>
+											</div>
+										<?php endif; ?>
+									<?php else : ?>
+										<div class="bg-danger p-2 text-white mb-2 float-right">
+											<span><i class="fas fa-hand-paper"></i></span>
+										</div>
+									<?php endif; ?>
 								</div>
 								<div class="col-sm-12">
 									<div class="bg-primary p-2 text-white float-left">
 										<span>Jam Keluar <?= $setting->jamPulang; ?></span>
 									</div>
-									<div class="bg-success p-2 text-white mb-2 float-right">
-										<span><i class="fas fa-hand-paper"></i></span>
-									</div>
+									<?php if ($presensiHariIni) : ?>
+										<?php if ($presensiHariIni[0]->izin == null) : ?>
+											<?php if ($presensiHariIni[0]->presensiPulang != null) : ?>
+												<div class="bg-success p-2 text-white mb-2 float-right">
+													<span><i class="fas fa-hand-paper"></i></span>
+												</div>
+											<?php else : ?>
+												<div class="bg-danger p-2 text-white mb-2 float-right">
+													<span><i class="fas fa-hand-paper"></i></span>
+												</div>
+											<?php endif; ?>
+										<?php else : ?>
+											<div class="bg-info p-2 text-white mb-2 float-right">
+												<span><i class="fas fa-info"></i></span>
+											</div>
+										<?php endif; ?>
+									<?php else : ?>
+										<div class="bg-danger p-2 text-white mb-2 float-right">
+											<span><i class="fas fa-hand-paper"></i></span>
+										</div>
+									<?php endif; ?>
 								</div>
 							<?php else : ?>
 								<div class="col-sm-12">

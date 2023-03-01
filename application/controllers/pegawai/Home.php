@@ -25,6 +25,10 @@ class Home extends CI_Controller
 			'navbar'  => 'pegawai/navbar',
 			'page'    => 'pegawai/dashboard',
 			'setting' => $this->pegawai->getSetting(),
+			'presensiHariIni' => $this->pegawai->getPresensi([
+				'idPegawai' => $this->dt_pegawai->id,
+				'tanggal'   => date('Y-m-d'),
+			]),
 		];
 
 		$this->load->view('index', $data);
