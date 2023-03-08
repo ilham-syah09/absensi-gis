@@ -27,7 +27,7 @@ class Home extends CI_Controller
             'setting' => $this->admin->getSetting(),
             'jabatan' => $this->admin->getCountJabatan(),
             'pegawaiAktif' => $this->admin->getCountPegawai(1),
-            'pegawaiTidakAktif' => $this->admin->getCountPegawai(0),
+            'pegawaiTidakAktif' => $this->admin->getCountPegawai(0)
         ];
 
         $this->load->view('index', $data);

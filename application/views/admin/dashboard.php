@@ -69,7 +69,7 @@
 							<span>Jam Masuk <?= $setting->jamMasuk; ?></span>
 						</div>
 						<div class="bg-primary p-3 text-white text-center">
-							<span>Jam Keluar <?= $setting->jamPulang; ?></span>
+							<span>Jam Pulang <?= $setting->jamPulang; ?></span>
 						</div>
 						<div class="p-3">
 							<h5>Hari Kerja</h5>

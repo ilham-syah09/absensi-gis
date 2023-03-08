@@ -48,7 +48,7 @@ class M_login extends CI_Model
                     return 'Username atau Password Salah!!';
                 }
             } else {
-                return 'Username tidak terdaftar';
+                return 'Username atau Password Salah!!';
             }
         }
     }
