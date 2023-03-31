@@ -11,5 +11,7 @@
 		<li class="menu-header">Data</li>
 
 		<li class="<?= ($this->uri->segment(2) === "presensi") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('pegawai/presensi'); ?>"><i class="fa fa-calendar"></i> <span>Presensi</span></a></li>
+
+		<li class="<?= ($this->uri->segment(2) === "profile") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('pegawai/profile'); ?>"><i class="fa fa-user"></i> <span>Profile</span></a></li>
 	</ul>
 </aside>

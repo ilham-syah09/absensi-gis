@@ -6,39 +6,10 @@
 	</div>
 	<div class="section-body">
 		<div class="row">
-			<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
+			<div class="col-md-4">
 				<div class="card">
-					<div class="card-header justify-content-center bg-secondary">
-						<h5>Biodata</h5>
-					</div>
-					<div class="card-body">
-						<div class="row">
-							<div class="col-sm-12 text-center mb-3">
-								<img src="<?= base_url('uploads/profiles/') . $this->dt_pegawai->image; ?>" alt="Image Profile" class="img-thumbnail" width="200">
-							</div>
-							<div class="col-sm-12">
-								<div class="bg-primary p-2 text-white mb-2">
-									<span>Nama - <?= $this->dt_pegawai->nama; ?></span>
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="bg-primary p-2 text-white mb-2">
-									<span>NIP - <?= $this->dt_pegawai->nip; ?></span>
-								</div>
-							</div>
-							<div class="col-sm-12">
-								<div class="bg-primary p-2 text-white">
-									<span>Email - <?= $this->dt_pegawai->email; ?></span>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
-				<div class="card">
-					<div class="card-header justify-content-center bg-secondary">
-						<h5>Presensi hari ini</h5>
+					<div class="card-header justify-content-center bg-primary">
+						<h5 class="text-white">Presensi hari ini</h5>
 					</div>
 					<div class="card-body">
 						<div class="row">
@@ -109,10 +80,10 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-sm-12 col-md-6 col-lg-6 col-xl-6">
+			<div class="col-md-8">
 				<div class="card">
-					<div class="card-header justify-content-center bg-secondary">
-						<h5>Lokasi Kantor</h5>
+					<div class="card-header justify-content-center bg-primary">
+						<h5 class="text-white">Lokasi Kantor</h5>
 					</div>
 					<div class="card-body">
 						<iframe width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="<?= "https://maps.google.com/maps?q=" . $setting->lintangBujur . "&amp;output=embed"; ?>">
