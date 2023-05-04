@@ -110,6 +110,16 @@ class M_admin extends CI_Model
 
         return $this->db->get('presensi')->row();
     }
+
+    public function getLembur()
+    {
+        $this->db->select('lembur.*, pegawai.nama');
+        $this->db->join('pegawai', 'pegawai.id = lembur.idPegawai', 'inner');
+
+        $this->db->order_by('lembur.tanggal', 'desc');
+
+        return $this->db->get('lembur')->result();
+    }
 }
 
 /* End of file M_admin.php */

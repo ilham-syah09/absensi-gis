@@ -14,8 +14,9 @@
 		<li class="<?= ($this->uri->segment(2) === "pegawai") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('admin/pegawai'); ?>"><i class="fa fa-user"></i> <span>Pegawai</span></a></li>
 		<li class="<?= ($this->uri->segment(2) === "setting") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('admin/setting'); ?>"><i class="fa fa-wrench"></i> <span>Setting Presensi</span></a></li>
 
-		<li class="menu-header">Data Rekap</li>
+		<li class="menu-header">Data</li>
 
 		<li class="<?= ($this->uri->segment(2) === "presensi") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('admin/presensi'); ?>"><i class="fa fa-calendar"></i> <span>Presensi</span></a></li>
+		<li class="<?= ($this->uri->segment(2) === "lembur") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('admin/lembur'); ?>"><i class="fa fa-clock"></i> <span>Lembur</span></a></li>
 	</ul>
 </aside>
