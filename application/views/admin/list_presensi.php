@@ -31,33 +31,25 @@
 										<tr>
 											<td><?= $pres->nama; ?></td>
 											<td class="text-dark">
-												<?php if ($pres->izin == null) : ?>
-													<?php if ($pres->presensiMasuk == null) : ?>
-														<span class="badge badge-warning text-dark">Belum Presensi</span>
-													<?php else : ?>
-														<?php if ($pres->presensiMasuk > $setting->jamMasuk) : ?>
-															<span class="badge badge-danger text-dark"><?= $pres->presensiMasuk; ?></span>
-														<?php else : ?>
-															<span class="badge badge-success text-dark"><?= $pres->presensiMasuk; ?></span>
-														<?php endif; ?>
-													<?php endif; ?>
+												<?php if ($pres->presensiMasuk == null) : ?>
+													<span class="badge badge-warning text-dark">Belum Presensi</span>
 												<?php else : ?>
-													<span class="badge badge-info text-dark">Izin</span>
+													<?php if ($pres->presensiMasuk > $setting->jamMasuk) : ?>
+														<span class="badge badge-danger text-dark"><?= $pres->presensiMasuk; ?></span>
+													<?php else : ?>
+														<span class="badge badge-success text-dark"><?= $pres->presensiMasuk; ?></span>
+													<?php endif; ?>
 												<?php endif; ?>
 											</td>
 											<td>
-												<?php if ($pres->izin == null) : ?>
-													<?php if ($pres->presensiPulang == null) : ?>
-														<span class="badge badge-warning text-dark">Belum Presensi</span>
-													<?php else : ?>
-														<?php if ($pres->presensiPulang < $setting->jamPulang) : ?>
-															<span class="badge badge-danger text-dark"><?= $pres->presensiPulang; ?></span>
-														<?php else : ?>
-															<span class="badge badge-success text-dark"><?= $pres->presensiPulang; ?></span>
-														<?php endif; ?>
-													<?php endif; ?>
+												<?php if ($pres->presensiPulang == null) : ?>
+													<span class="badge badge-warning text-dark">Belum Presensi</span>
 												<?php else : ?>
-													<span class="badge badge-info text-dark">Izin</span>
+													<?php if ($pres->presensiPulang < $setting->jamPulang) : ?>
+														<span class="badge badge-danger text-dark"><?= $pres->presensiPulang; ?></span>
+													<?php else : ?>
+														<span class="badge badge-success text-dark"><?= $pres->presensiPulang; ?></span>
+													<?php endif; ?>
 												<?php endif; ?>
 											</td>
 											<td>

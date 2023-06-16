@@ -37,18 +37,14 @@ $lintangBujur = explode(', ', $setting->lintangBujur);
 										<tr>
 											<td>
 												<?php if ($presensiHariIni) : ?>
-													<?php if ($presensiHariIni[0]->izin == null) : ?>
-														<?php if ($presensiHariIni[0]->presensiMasuk == null) : ?>
-															<span class="badge badge-warning text-dark">Belum Presensi</span>
-														<?php else : ?>
-															<?php if ($presensiHariIni[0]->presensiMasuk > $setting->jamMasuk) : ?>
-																<span class="badge badge-danger text-dark"><?= $presensiHariIni[0]->presensiMasuk; ?></span>
-															<?php else : ?>
-																<span class="badge badge-success text-dark"><?= $presensiHariIni[0]->presensiMasuk; ?></span>
-															<?php endif; ?>
-														<?php endif; ?>
+													<?php if ($presensiHariIni[0]->presensiMasuk == null) : ?>
+														<span class="badge badge-warning text-dark">Belum Presensi</span>
 													<?php else : ?>
-														<span class="badge badge-info text-dark">Izin</span>
+														<?php if ($presensiHariIni[0]->presensiMasuk > $setting->jamMasuk) : ?>
+															<span class="badge badge-danger text-dark"><?= $presensiHariIni[0]->presensiMasuk; ?></span>
+														<?php else : ?>
+															<span class="badge badge-success text-dark"><?= $presensiHariIni[0]->presensiMasuk; ?></span>
+														<?php endif; ?>
 													<?php endif; ?>
 												<?php else : ?>
 													<span class="badge badge-warning text-dark">Belum Presensi</span>
@@ -56,18 +52,14 @@ $lintangBujur = explode(', ', $setting->lintangBujur);
 											</td>
 											<td>
 												<?php if ($presensiHariIni) : ?>
-													<?php if ($presensiHariIni[0]->izin == null) : ?>
-														<?php if ($presensiHariIni[0]->presensiPulang == null) : ?>
-															<span class="badge badge-warning text-dark">Belum Presensi</span>
-														<?php else : ?>
-															<?php if ($presensiHariIni[0]->presensiPulang < $setting->jamPulang) : ?>
-																<span class="badge badge-danger text-dark"><?= $presensiHariIni[0]->presensiPulang; ?></span>
-															<?php else : ?>
-																<span class="badge badge-success text-dark"><?= $presensiHariIni[0]->presensiPulang; ?></span>
-															<?php endif; ?>
-														<?php endif; ?>
+													<?php if ($presensiHariIni[0]->presensiPulang == null) : ?>
+														<span class="badge badge-warning text-dark">Belum Presensi</span>
 													<?php else : ?>
-														<span class="badge badge-info text-dark">Izin</span>
+														<?php if ($presensiHariIni[0]->presensiPulang < $setting->jamPulang) : ?>
+															<span class="badge badge-danger text-dark"><?= $presensiHariIni[0]->presensiPulang; ?></span>
+														<?php else : ?>
+															<span class="badge badge-success text-dark"><?= $presensiHariIni[0]->presensiPulang; ?></span>
+														<?php endif; ?>
 													<?php endif; ?>
 												<?php else : ?>
 													<span class="badge badge-warning text-dark">Belum Presensi</span>
@@ -77,20 +69,18 @@ $lintangBujur = explode(', ', $setting->lintangBujur);
 												<?php if ($presensiHariIni) : ?>
 													<?php if ($presensiHariIni[0]->izin == null) : ?>
 														<span class="badge badge-info text-dark">Tidak Izin</span>
-													<?php else : ?>
-														<?php if ($presensiHariIni[0]->statusIzin == 'Menunggu') : ?>
-															<span class="badge badge-warning text-dark"><?= $presensiHariIni[0]->statusIzin; ?></span>
-														<?php elseif ($presensiHariIni[0]->statusIzin == 'Ditolak') : ?>
-															<span class="badge badge-danger text-dark"><?= $presensiHariIni[0]->statusIzin; ?></span>
-														<?php elseif ($presensiHariIni[0]->statusIzin == 'Disetujui') : ?>
-															<span class="badge badge-success text-dark"><?= $presensiHariIni[0]->statusIzin; ?></span>
-														<?php endif; ?>
+													<?php elseif ($presensiHariIni[0]->statusIzin == 'Menunggu') : ?>
+														<span class="badge badge-warning text-dark"><?= $presensiHariIni[0]->statusIzin; ?></span>
+													<?php elseif ($presensiHariIni[0]->statusIzin == 'Ditolak') : ?>
+														<span class="badge badge-danger text-dark"><?= $presensiHariIni[0]->statusIzin; ?></span>
+													<?php elseif ($presensiHariIni[0]->statusIzin == 'Disetujui') : ?>
+														<span class="badge badge-success text-dark"><?= $presensiHariIni[0]->statusIzin; ?></span>
 													<?php endif; ?>
 												<?php else : ?>
 													<span class="badge badge-info text-dark">Tidak Izin</span>
 												<?php endif; ?>
 											</td>
-											<th>
+											<td>
 												<?php if (!$presensiHariIni) : ?>
 													<a href="#" class="badge badge-info text-dark" data-toggle="modal" data-target="#modalPresensi" data-title="Presensi" id="btn-presensi" data-typepresensi="Masuk">Presensi</a>
 													<a href="#" class="badge badge-success text-dark" data-toggle="modal" data-target="#modalIzin" data-title="Izin">Izin</a>
@@ -98,10 +88,11 @@ $lintangBujur = explode(', ', $setting->lintangBujur);
 													<?php if ($presensiHariIni[0]->izin == null) : ?>
 														<?php if ($presensiHariIni[0]->presensiPulang == null) : ?>
 															<a href="#" class="badge badge-info text-dark" data-toggle="modal" data-target="#modalPresensi" data-title="Presensi" id="btn-presensi" data-typepresensi="Pulang">Presensi</a>
+															<a href="#" class="badge badge-success text-dark" data-toggle="modal" data-target="#modalIzin" data-title="Izin">Izin</a>
 														<?php endif; ?>
 													<?php endif; ?>
 												<?php endif; ?>
-											</th>
+											</td>
 										</tr>
 									<?php else : ?>
 										<tr>
@@ -164,33 +155,25 @@ $lintangBujur = explode(', ', $setting->lintangBujur);
 											<td><?= $i++; ?></td>
 											<td><?= date('d M Y', strtotime($pres->tanggal)); ?></td>
 											<td class="text-dark">
-												<?php if ($pres->izin == null) : ?>
-													<?php if ($pres->presensiMasuk == null) : ?>
-														<span class="badge badge-warning text-dark">Belum Presensi</span>
-													<?php else : ?>
-														<?php if ($pres->presensiMasuk > $setting->jamMasuk) : ?>
-															<span class="badge badge-danger text-dark"><?= $pres->presensiMasuk; ?></span>
-														<?php else : ?>
-															<span class="badge badge-success text-dark"><?= $pres->presensiMasuk; ?></span>
-														<?php endif; ?>
-													<?php endif; ?>
+												<?php if ($pres->presensiMasuk == null) : ?>
+													<span class="badge badge-warning text-dark">Belum Presensi</span>
 												<?php else : ?>
-													<span class="badge badge-info text-dark">Izin</span>
+													<?php if ($pres->presensiMasuk > $setting->jamMasuk) : ?>
+														<span class="badge badge-danger text-dark"><?= $pres->presensiMasuk; ?></span>
+													<?php else : ?>
+														<span class="badge badge-success text-dark"><?= $pres->presensiMasuk; ?></span>
+													<?php endif; ?>
 												<?php endif; ?>
 											</td>
 											<td>
-												<?php if ($pres->izin == null) : ?>
-													<?php if ($pres->presensiPulang == null) : ?>
-														<span class="badge badge-warning text-dark">Belum Presensi</span>
-													<?php else : ?>
-														<?php if ($pres->presensiPulang < $setting->jamPulang) : ?>
-															<span class="badge badge-danger text-dark"><?= $pres->presensiPulang; ?></span>
-														<?php else : ?>
-															<span class="badge badge-success text-dark"><?= $pres->presensiPulang; ?></span>
-														<?php endif; ?>
-													<?php endif; ?>
+												<?php if ($pres->presensiPulang == null) : ?>
+													<span class="badge badge-warning text-dark">Belum Presensi</span>
 												<?php else : ?>
-													<span class="badge badge-info text-dark">Izin</span>
+													<?php if ($pres->presensiPulang < $setting->jamPulang) : ?>
+														<span class="badge badge-danger text-dark"><?= $pres->presensiPulang; ?></span>
+													<?php else : ?>
+														<span class="badge badge-success text-dark"><?= $pres->presensiPulang; ?></span>
+													<?php endif; ?>
 												<?php endif; ?>
 											</td>
 											<td>

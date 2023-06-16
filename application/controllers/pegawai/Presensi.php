@@ -203,21 +203,45 @@ class Presensi extends CI_Controller
 			} else {
 				$upload_data = $this->upload->data();
 
-				$data = [
-					'idPegawai'  => $this->dt_pegawai->id,
-					'tanggal'    => date('Y-m-d'),
-					'izin'       => date('H:i:s'),
-					'alasanIzin' => $this->input->post('alasan'),
-					'document'   => $upload_data['file_name'],
-					'statusIzin' => 'Menunggu'
-				];
+				$this->db->where('idPegawai', $this->dt_pegawai->id);
+				$this->db->where('tanggal', date('Y-m-d'));
+				$cek = $this->db->get('presensi')->row();
 
-				$insert = $this->db->insert('presensi', $data);
+				if (!$cek) {
+					$data = [
+						'idPegawai'  => $this->dt_pegawai->id,
+						'tanggal'    => date('Y-m-d'),
+						'izin'       => date('H:i:s'),
+						'alasanIzin' => $this->input->post('alasan'),
+						'document'   => $upload_data['file_name'],
+						'statusIzin' => 'Menunggu'
+					];
 
-				if ($insert) {
-					$this->session->set_flashdata('toastr-sukses', 'Permohonan izin berhasil');
+					$insert = $this->db->insert('presensi', $data);
+
+					if ($insert) {
+						$this->session->set_flashdata('toastr-sukses', 'Permohonan izin berhasil');
+					} else {
+						$this->session->set_flashdata('toastr-eror', 'Serve error!');
+					}
 				} else {
-					$this->session->set_flashdata('toastr-eror', 'Serve error!');
+					$data = [
+						'izin'       => date('H:i:s'),
+						'alasanIzin' => $this->input->post('alasan'),
+						'document'   => $upload_data['file_name'],
+						'statusIzin' => 'Menunggu'
+					];
+
+					$this->db->where('idPegawai', $this->dt_pegawai->id);
+					$this->db->where('tanggal', date('Y-m-d'));
+
+					$update = $this->db->update('presensi', $data);
+
+					if ($update) {
+						$this->session->set_flashdata('toastr-sukses', 'Permohonan izin berhasil');
+					} else {
+						$this->session->set_flashdata('toastr-eror', 'Serve error!');
+					}
 				}
 			}
 		} else {

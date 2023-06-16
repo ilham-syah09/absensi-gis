@@ -90,6 +90,24 @@ class M_admin extends CI_Model
         return $this->db->get('presensi')->result();
     }
 
+    public function getRekapIzin($tahun, $bulan)
+    {
+        $this->db->select('presensi.idPegawai, pegawai.nama, COUNT(presensi.izin) as jumlahIzin, COUNT(presensi.idPegawai) as total');
+
+        $this->db->join('pegawai', 'pegawai.id = presensi.idPegawai', 'inner');
+
+
+        $this->db->group_start();
+        $this->db->where('YEAR(tanggal)', $tahun);
+        $this->db->where('MONTH(tanggal)', $bulan);
+        $this->db->group_end();
+
+        $this->db->group_by('presensi.idPegawai');
+        $this->db->order_by('pegawai.nama', 'asc');
+
+        return $this->db->get('presensi')->result();
+    }
+
     public function getListPresensi($tanggal)
     {
         $this->db->select('presensi.*, pegawai.nama');
@@ -97,6 +115,20 @@ class M_admin extends CI_Model
 
         $this->db->where('presensi.tanggal', $tanggal);
         $this->db->order_by('pegawai.nama', 'asc');
+
+        return $this->db->get('presensi')->result();
+    }
+
+    public function getListIzin($th, $bln, $id)
+    {
+        $this->db->group_start();
+        $this->db->where('YEAR(tanggal)', $th);
+        $this->db->where('MONTH(tanggal)', $bln);
+        $this->db->where('idPegawai', $id);
+        $this->db->where('izin !=', null);
+        $this->db->group_end();
+
+        $this->db->order_by('tanggal', 'asc');
 
         return $this->db->get('presensi')->result();
     }
