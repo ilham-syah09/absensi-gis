@@ -11,8 +11,10 @@
     <link rel="stylesheet" href="<?= base_url(); ?>assets/modules/fontawesome/css/all.min.css">
 
     <!-- CSS Libraries -->
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/modules/datatables/datatables.min.css">
-    <link rel="stylesheet" href="<?= base_url(); ?>assets/modules/datatables/DataTables-1.10.16/css/dataTables.bootstrap4.min.css">
+
+    <!-- Datatables -->
+    <link rel="stylesheet" href="<?= base_url('assets/modules/datatable/dataTables.bootstrap4.min.css') ?>" type="text/css">
+    <link rel="stylesheet" href="<?= base_url('assets/modules/datatable/buttons.bootstrap4.min.css') ?>" type="text/css">
 
     <link rel="stylesheet" href="<?= base_url(); ?>assets/modules/izitoast/css/iziToast.min.css">
 
@@ -121,8 +123,18 @@
     <script src="<?= base_url(); ?>assets/js/stisla.js"></script>
 
     <!-- JS Libraies -->
-    <script src="<?= base_url(); ?>assets/modules/datatables/datatables.min.js"></script>
-    <script src="<?= base_url(); ?>assets/modules/datatables/DataTables-1.10.16/js/dataTables.bootstrap4.min.js"></script>
+    <!-- Datatables -->
+    <script src="<?php echo base_url(); ?>assets/modules/datatable/jquery.dataTables.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatable/dataTables.bootstrap4.min.js"></script>
+
+    <script src="<?php echo base_url(); ?>assets/modules/datatable/dataTables.buttons.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatable/buttons.bootstrap4.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatable/jszip.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatable/pdfmake.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatable/vfs_fonts.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatable/buttons.html5.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatable/buttons.print.min.js"></script>
+    <script src="<?php echo base_url(); ?>assets/modules/datatable/buttons.colVis.min.js"></script>
 
     <script src="<?= base_url(); ?>assets/modules/jquery-selectric/jquery.selectric.min.js"></script>
     <script src="<?= base_url(); ?>assets/modules/izitoast/js/iziToast.min.js"></script>
@@ -156,6 +168,37 @@
             }
 
             $('#example').DataTable();
+
+            var table = $('#examples').DataTable({
+                lengthChange: false,
+                pageLength: 25,
+                buttons: [{
+                        extend: 'print',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'excel',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    {
+                        extend: 'pdf',
+                        exportOptions: {
+                            columns: ':visible'
+                        }
+                    },
+                    'colvis'
+                ],
+                columnDefs: [{
+                    visible: false
+                }]
+            });
+
+            table.buttons().container()
+                .appendTo('#examples_wrapper .col-md-6:eq(0)');
         });
     </script>
 </body>

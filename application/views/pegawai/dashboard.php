@@ -1,7 +1,7 @@
 <section class="section">
 	<div class="section-header">
 
-		<h1><?= 'Selamat datang, ' . $this->dt_pegawai->nama; ?></h1>
+		<h1><?= 'Selamat datang di Sistem Presensi PT Tri Lestari Sandang Industri, ' . $this->dt_pegawai->nama; ?></h1>
 
 	</div>
 	<div class="section-body">

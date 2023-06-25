@@ -40,7 +40,7 @@
 															<td>Status</td>
 															<td>:</td>
 															<td>
-																<span class="badge badge-danger text-dark">Terlambat</span>
+																<span class="badge badge-danger text-dark"><?= masuk($presensi->presensiMasuk, $setting->jamMasuk); ?></span>
 															</td>
 														</tr>
 													<?php endif; ?>

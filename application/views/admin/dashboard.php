@@ -4,6 +4,15 @@
 	</div>
 	<div class="section-body">
 		<div class="row">
+			<div class="col-lg-12">
+				<div class="card">
+					<div class="card-body">
+						<h4>Selamat datang di Sistem Presensi PT Tri Lestari Sandang Industri</h4>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-6 col-12">
 				<div class="card card-statistic-1">
 					<div class="card-icon bg-danger">

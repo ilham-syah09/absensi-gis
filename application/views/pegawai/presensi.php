@@ -159,7 +159,7 @@ $lintangBujur = explode(', ', $setting->lintangBujur);
 													<span class="badge badge-warning text-dark">Belum Presensi</span>
 												<?php else : ?>
 													<?php if ($pres->presensiMasuk > $setting->jamMasuk) : ?>
-														<span class="badge badge-danger text-dark"><?= $pres->presensiMasuk; ?></span>
+														<span class="badge badge-danger text-dark"><?= $pres->presensiMasuk . ' - ' . masuk($pres->presensiMasuk, $setting->jamMasuk); ?></span>
 													<?php else : ?>
 														<span class="badge badge-success text-dark"><?= $pres->presensiMasuk; ?></span>
 													<?php endif; ?>

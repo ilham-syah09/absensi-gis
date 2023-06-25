@@ -65,6 +65,10 @@ $route['admin/presensi/(:any)/(:any)']      = 'admin/presensi/index';
 $route['admin/izin/(:any)']             = 'admin/izin/index';
 $route['admin/izin/(:any)/(:any)']      = 'admin/izin/index';
 
+$route['admin/rekap/detail/(:any)'] = 'admin/rekap/detail/$1';
+$route['admin/rekap/(:any)']        = 'admin/rekap/index';
+$route['admin/rekap/(:any)/(:any)'] = 'admin/rekap/index';
+
 // pegawai
 $route['pegawai'] = 'pegawai/home';
 

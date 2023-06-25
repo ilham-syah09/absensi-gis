@@ -96,7 +96,6 @@ class M_admin extends CI_Model
 
         $this->db->join('pegawai', 'pegawai.id = presensi.idPegawai', 'inner');
 
-
         $this->db->group_start();
         $this->db->where('YEAR(tanggal)', $tahun);
         $this->db->where('MONTH(tanggal)', $bulan);
@@ -151,6 +150,19 @@ class M_admin extends CI_Model
         $this->db->order_by('lembur.tanggal', 'desc');
 
         return $this->db->get('lembur')->result();
+    }
+
+    public function getRekapBulanan($th, $bln, $id)
+    {
+        $this->db->group_start();
+        $this->db->where('YEAR(tanggal)', $th);
+        $this->db->where('MONTH(tanggal)', $bln);
+        $this->db->where('idPegawai', $id);
+        $this->db->group_end();
+
+        $this->db->order_by('tanggal', 'asc');
+
+        return $this->db->get('presensi')->result();
     }
 }
 

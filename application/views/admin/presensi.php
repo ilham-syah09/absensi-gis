@@ -1,3 +1,5 @@
+<meta http-equiv="refresh" content="30">
+
 <section class="section">
 	<div class="section-header">
 		<h1><?= $title; ?></h1>

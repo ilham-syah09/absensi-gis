@@ -18,6 +18,7 @@
 
 		<li class="<?= ($this->uri->segment(2) === "presensi") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('admin/presensi'); ?>"><i class="fa fa-calendar"></i> <span>Presensi</span></a></li>
 		<li class="<?= ($this->uri->segment(2) === "izin") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('admin/izin'); ?>"><i class="fa fa-hand-paper"></i> <span>Rekap Izin</span></a></li>
+		<li class="<?= ($this->uri->segment(2) === "rekap") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('admin/rekap'); ?>"><i class="fa fa-file"></i> <span>Rekap Bulanan</span></a></li>
 		<li class="<?= ($this->uri->segment(2) === "lembur") ? 'active' : '' ?>"><a class="nav-link" href="<?= base_url('admin/lembur'); ?>"><i class="fa fa-clock"></i> <span>Lembur</span></a></li>
 	</ul>
 </aside>

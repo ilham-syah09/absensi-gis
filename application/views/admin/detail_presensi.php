@@ -1,11 +1,17 @@
+<meta http-equiv="refresh" content="30">
+
 <section class="section">
 	<div class="section-header">
-		<h1><?= $title . ' : ' . $presensi->nama; ?></h1>
+		<h1><?= $title . ' : ' . $presensi->nama . ' | ' . date('d M Y', strtotime($presensi->tanggal)); ?></h1>
 	</div>
 	<div class="section-body">
 		<div class="row mb-3 text-right">
 			<div class="col-xl-12">
-				<a href="<?= base_url('admin/presensi/list/') . $presensi->tanggal; ?>" class="btn btn-primary">Kembali</a>
+				<?php if ($this->uri->segment(2) == 'rekap') : ?>
+					<a href="<?= $_SERVER['HTTP_REFERER']; ?>" class="btn btn-primary">Kembali</a>
+				<?php else : ?>
+					<a href="<?= base_url('admin/presensi/list/') . $presensi->tanggal; ?>" class="btn btn-primary">Kembali</a>
+				<?php endif; ?>
 			</div>
 		</div>
 		<div class="row">
@@ -40,7 +46,7 @@
 															<td>Status</td>
 															<td>:</td>
 															<td>
-																<span class="badge badge-danger text-dark">Terlambat</span>
+																<span class="badge badge-danger text-dark"><?= masuk($presensi->presensiMasuk, $setting->jamMasuk); ?></span>
 															</td>
 														</tr>
 													<?php endif; ?>

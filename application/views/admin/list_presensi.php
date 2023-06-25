@@ -1,3 +1,5 @@
+<meta http-equiv="refresh" content="30">
+
 <section class="section">
 	<div class="section-header">
 		<h1><?= $title; ?></h1>
@@ -35,7 +37,7 @@
 													<span class="badge badge-warning text-dark">Belum Presensi</span>
 												<?php else : ?>
 													<?php if ($pres->presensiMasuk > $setting->jamMasuk) : ?>
-														<span class="badge badge-danger text-dark"><?= $pres->presensiMasuk; ?></span>
+														<span class="badge badge-danger text-dark"><?= $pres->presensiMasuk . ' - ' . masuk($pres->presensiMasuk, $setting->jamMasuk); ?></span>
 													<?php else : ?>
 														<span class="badge badge-success text-dark"><?= $pres->presensiMasuk; ?></span>
 													<?php endif; ?>
