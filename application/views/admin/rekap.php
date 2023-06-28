@@ -58,6 +58,7 @@
 											<td>
 												<a href="<?= base_url('admin/rekap/list/') . $th_ini . '/' . $bln_ini . '/' . $peg->id; ?>" class="badge badge-warning text-dark" data-toggle="tooltip" data-title="Detail">Detail</a>
 											</td>
+											<td></td>
 										</tr>
 									<?php endforeach; ?>
 								</tbody>
