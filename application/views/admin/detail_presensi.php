@@ -49,6 +49,14 @@
 																<span class="badge badge-danger text-dark"><?= masuk($presensi->presensiMasuk, $setting->jamMasuk); ?></span>
 															</td>
 														</tr>
+													<?php else : ?>
+														<tr>
+															<td>Status</td>
+															<td>:</td>
+															<td>
+																<span class="badge badge-success text-dark">Tepat Waktu</span>
+															</td>
+														</tr>
 													<?php endif; ?>
 												</thead>
 											</table>
@@ -79,12 +87,12 @@
 											<table class="table table-bordered" width="100%" cellspacing="0">
 												<thead>
 													<tr>
-														<td>Jadwal Masuk</td>
+														<td>Jadwal Pulang</td>
 														<td>:</td>
 														<td><?= $setting->jamPulang; ?></td>
 													</tr>
 													<tr>
-														<td>Presensi Masuk</td>
+														<td>Presensi Pulang</td>
 														<td>:</td>
 														<td><?= $presensi->presensiPulang; ?></td>
 													</tr>
@@ -94,6 +102,14 @@
 															<td>:</td>
 															<td>
 																<span class="badge badge-danger text-dark">Sebelum Waktunya</span>
+															</td>
+														</tr>
+													<?php else : ?>
+														<tr>
+															<td>Status</td>
+															<td>:</td>
+															<td>
+																<span class="badge badge-success text-dark">Tepat Waktu</span>
 															</td>
 														</tr>
 													<?php endif; ?>

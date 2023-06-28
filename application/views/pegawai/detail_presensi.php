@@ -43,6 +43,14 @@
 																<span class="badge badge-danger text-dark"><?= masuk($presensi->presensiMasuk, $setting->jamMasuk); ?></span>
 															</td>
 														</tr>
+													<?php else : ?>
+														<tr>
+															<td>Status</td>
+															<td>:</td>
+															<td>
+																<span class="badge badge-success text-dark">Tepat Waktu</span>
+															</td>
+														</tr>
 													<?php endif; ?>
 												</thead>
 											</table>
@@ -88,6 +96,14 @@
 															<td>:</td>
 															<td>
 																<span class="badge badge-danger text-dark">Sebelum Waktunya</span>
+															</td>
+														</tr>
+													<?php else : ?>
+														<tr>
+															<td>Status</td>
+															<td>:</td>
+															<td>
+																<span class="badge badge-success text-dark">Tepat Waktu</span>
 															</td>
 														</tr>
 													<?php endif; ?>
